@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Green Gourmet</string>
+
+    <string name="cuisine_name">Cuisines</string>
+
+    <string name="ingredient_name">Ingredients</string>
+
+    <string name="market_name">Market</string>
+</resources>

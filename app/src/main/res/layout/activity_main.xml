@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.greengourmet.MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/cuisine"
+        android:text="@string/cuisine_name"
+        style="@style/HomeStyle"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginLeft="36dp"
+        android:textSize="22sp"/>
+
+    <Button
+        android:id="@+id/ingredient"
+        android:text="@string/ingredient_name"
+        style="@style/HomeStyle"
+        android:textSize="22sp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginLeft="36dp" />
+
+    <Button
+        android:id="@+id/market"
+        android:text="@string/market_name"
+        style="@style/HomeStyle"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginLeft="36dp"
+        android:textSize="22sp"/>
+
+
+
+</LinearLayout>
