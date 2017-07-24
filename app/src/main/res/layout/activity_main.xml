@@ -11,20 +11,15 @@
         android:text="@string/cuisine_name"
         style="@style/HomeStyle"
         android:layout_marginBottom="48dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginLeft="36dp"
-        android:textSize="22sp"/>
+        android:layout_marginTop="36dp" />
 
     <Button
         android:id="@+id/ingredient"
         android:text="@string/ingredient_name"
         style="@style/HomeStyle"
-        android:textSize="22sp"
         android:layout_marginBottom="48dp"
         android:layout_marginTop="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginLeft="36dp" />
+        />
 
     <Button
         android:id="@+id/market"
@@ -32,9 +27,7 @@
         style="@style/HomeStyle"
         android:layout_marginBottom="48dp"
         android:layout_marginTop="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginLeft="36dp"
-        android:textSize="22sp"/>
+        />
 
 
 
