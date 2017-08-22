@@ -16,14 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CuisineActivity"
-            android:label="@string/cuisine_name"/>
+
+        <activity
+            android:name=".CuisineActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/cuisine_name">
+        </activity>
 
         <activity android:name=".IngredientsActivity"
-            android:label="@string/ingredient_name"/>
+            android:parentActivityName=".MainActivity"
+            android:label="@string/ingredient_name">
+        </activity>
 
-        <activity android:name=".MarketActivity"
-            android:label="@string/market_name"></activity>
+
+        <activity
+            android:name=".MarketActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/market_name">
+        </activity>
+
+
     </application>
 
 </manifest>
