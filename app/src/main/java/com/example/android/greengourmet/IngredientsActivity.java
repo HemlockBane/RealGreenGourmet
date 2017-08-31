@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -47,6 +48,14 @@ public class IngredientsActivity extends AppCompatActivity
         ListView listView = (ListView) findViewById(R.id.item_list);
 
         listView.setAdapter(listAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(IngredientsActivity.this, MarketActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

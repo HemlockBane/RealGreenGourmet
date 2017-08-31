@@ -3,43 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.greengourmet.MainActivity"
+    android:layout_marginTop="36dp"
     android:orientation="vertical"
-    android:layout_marginTop="36dp">
+    tools:context="com.example.android.greengourmet.MainActivity">
 
     <Button
         android:id="@+id/cuisine"
-        android:text="@string/cuisine_name"
         style="@style/HomeStyle"
         android:layout_marginBottom="48dp"
-        android:layout_marginTop="36dp" />
+        android:layout_marginTop="36dp"
+        android:text="@string/cuisine_name" />
 
     <Button
         android:id="@+id/ingredient"
-        android:text="@string/ingredient_name"
         style="@style/HomeStyle"
         android:layout_marginBottom="48dp"
         android:layout_marginTop="36dp"
-        />
+        android:text="@string/ingredient_name" />
 
     <Button
         android:id="@+id/market"
-        android:text="@string/market_name"
         style="@style/HomeStyle"
         android:layout_marginBottom="48dp"
         android:layout_marginTop="36dp"
-        />
-
-
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp"/>
-
-
+        android:text="@string/market_name" />
 
 
 </LinearLayout>

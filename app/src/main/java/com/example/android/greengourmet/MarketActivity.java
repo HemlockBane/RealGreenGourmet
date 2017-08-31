@@ -1,6 +1,7 @@
 package com.example.android.greengourmet;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,26 +44,28 @@ public class MarketActivity extends AppCompatActivity {
          */
 
 
-        MarketListAdapter listAdapter = new MarketListAdapter(this,displayObject);
+        MarketListAdapter listAdapter = new MarketListAdapter(this, displayObject);
 
         ListView listView = (ListView) findViewById(R.id.item_list);
 
         listView.setAdapter(listAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
                 Toast.makeText(MarketActivity.this, "Test", Toast.LENGTH_SHORT).show();
+
+                Intent bikeIntent = new Intent(MarketActivity.this, DirectionActivity.class);
+                startActivity(bikeIntent);
+//
 
 
             }
         });
 
 
-
-
-
     }
 }
+
