@@ -7,26 +7,31 @@
     android:orientation="vertical"
     tools:context="com.example.android.greengourmet.MainActivity">
 
-    <Button
-        android:id="@+id/cuisine"
-        style="@style/HomeStyle"
-        android:layout_marginBottom="48dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/cuisine_name" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-    <Button
-        android:id="@+id/ingredient"
-        style="@style/HomeStyle"
-        android:layout_marginBottom="48dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/ingredient_name" />
+    <!--<Button-->
+        <!--android:id="@+id/cuisine"-->
+        <!--style="@style/HomeStyle"-->
+        <!--android:layout_marginBottom="48dp"-->
+        <!--android:layout_marginTop="36dp"-->
+        <!--android:text="@string/cuisine_name" />-->
 
-    <Button
-        android:id="@+id/market"
-        style="@style/HomeStyle"
-        android:layout_marginBottom="48dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/market_name" />
+    <!--<Button-->
+        <!--android:id="@+id/ingredient"-->
+        <!--style="@style/HomeStyle"-->
+        <!--android:layout_marginBottom="48dp"-->
+        <!--android:layout_marginTop="36dp"-->
+        <!--android:text="@string/ingredient_name" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/market"-->
+        <!--style="@style/HomeStyle"-->
+        <!--android:layout_marginBottom="48dp"-->
+        <!--android:layout_marginTop="36dp"-->
+        <!--android:text="@string/market_name" />-->
 
 
 </LinearLayout>
