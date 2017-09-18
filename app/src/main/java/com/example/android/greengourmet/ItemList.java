@@ -6,10 +6,18 @@ package com.example.android.greengourmet;
 
 public class ItemList {
     private String firstItemName;
-
+    private String secondItemName;
     private int mImageResourceId;
 
-    public ItemList (String itemOne, int imageResourceId ){
+    public ItemList(String itemOne, String itemTwo, int imageResourceId) {
+
+        firstItemName = itemOne;
+        secondItemName = itemTwo;
+        mImageResourceId = imageResourceId;
+
+    }
+
+    public ItemList(String itemOne, int imageResourceId) {
 
         firstItemName = itemOne;
         mImageResourceId = imageResourceId;
@@ -20,10 +28,14 @@ public class ItemList {
         return firstItemName;
     }
 
+    public String getSecondItemName() {
+        return secondItemName;
+    }
 
-    public int getImageResourceId()
-    {
+
+    public int getImageResourceId() {
         return mImageResourceId;
 
     }
 }
+

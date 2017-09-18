@@ -1,44 +1,27 @@
 package com.example.android.greengourmet;
 
-
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import static com.example.android.greengourmet.R.drawable.ic_chevron_right_grey_600_24dp;
-
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class MarketFragment extends Fragment {
-
-
-    public MarketFragment() {
-        // Required empty public constructor
-    }
-
+public class MarketsActivity extends AppCompatActivity {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        View rootView = inflater.inflate(R.layout.activity_item_list, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_item_list);
         ArrayList<ItemList> displayObject = new ArrayList<>();
 
 
         displayObject.add(new ItemList("Yem Yem", "Yaba", R.drawable.ic_chevron_right_grey_600_24dp));
-        displayObject.add(new ItemList("Shoprite", "Abule Oja", R.drawable.ic_chevron_right_grey_600_24dp));
+        displayObject.add(new ItemList("Citydia", "Abule Oja", R.drawable.ic_chevron_right_grey_600_24dp));
         displayObject.add(new ItemList("Justrite", "Bariga", R.drawable.ic_chevron_right_grey_600_24dp));
         displayObject.add(new ItemList("Grocery Bazaar", "Ojuelegba", R.drawable.ic_chevron_right_grey_600_24dp));
 
@@ -53,9 +36,9 @@ public class MarketFragment extends Fragment {
          */
 
 
-        MarketListAdapter listAdapter = new MarketListAdapter(getActivity(), displayObject);
+        MarketListAdapter listAdapter = new MarketListAdapter(this, displayObject);
 
-        ListView listView = (ListView) rootView.findViewById(R.id.item_list);
+        ListView listView = (ListView) findViewById(R.id.item_list);
 
         listView.setAdapter(listAdapter);
 
@@ -64,18 +47,14 @@ public class MarketFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-                Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MarketsActivity.this, "Test", Toast.LENGTH_SHORT).show();
 
-                Intent bikeIntent = new Intent(getActivity(), DirectionActivity.class);
+                Intent bikeIntent = new Intent(MarketsActivity.this, DirectionActivity.class);
                 startActivity(bikeIntent);
 //
 
 
             }
         });
-
-
-        return rootView;
     }
-
 }

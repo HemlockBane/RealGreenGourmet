@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RealGreenGourmet.iml" filepath="$PROJECT_DIR$/RealGreenGourmet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RealGreenGourmets.iml" filepath="$PROJECT_DIR$/RealGreenGourmets.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -16,22 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CuisineActivity"
-            android:label="@string/cuisine_name"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".IngredientsActivity"
-            android:label="@string/ingredient_name"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MarketActivity"
-            android:label="@string/market_name"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ainActivity"
-            android:label="@string/title_activity_ain" />
-        <activity android:name=".DirectionActivity"></activity>
+
+
+        <activity android:name=".DirectionActivity" />
+        <activity android:name=".MarketsActivity" />
+
     </application>
 
 </manifest>
