@@ -35,8 +35,12 @@ public class MarketListAdapter extends ArrayAdapter <ItemList> {
 
         ItemList currentItemList = getItem(position);
 
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.display_market);
-        nameTextView.setText(currentItemList.getFirstItemName());
+        TextView fTextView = (TextView) listItemView.findViewById(R.id.display_market);
+        fTextView.setText(currentItemList.getFirstItemName());
+
+        TextView sTextView = (TextView) listItemView.findViewById(R.id.display_market2);
+        sTextView.setText(currentItemList.getSecondItemName());
+
 
 
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.icon_place_right);

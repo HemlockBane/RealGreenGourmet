@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -28,9 +29,11 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="top"
-            android:padding="16dp"
+            android:padding="8dp"
             android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#000"
             android:textSize="21sp"
+            android:textStyle="bold"
             tools:text="One" />
 
 
@@ -46,7 +49,7 @@
         android:layout_marginLeft="19dp"
         android:layout_marginStart="19dp"
         android:padding="26dp"
-        android:src="@drawable/ic_shopping_cart_teal_500_24dp" />
+        app:srcCompat="@drawable/ic_chevron_right_grey_600_24dp" />
 
 
 </RelativeLayout>

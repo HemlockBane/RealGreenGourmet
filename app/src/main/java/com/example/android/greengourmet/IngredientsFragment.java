@@ -61,7 +61,7 @@ public class IngredientsFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), MarketActivity.class);
+                Intent intent = new Intent(getActivity(), MarketsActivity.class);
                 startActivity(intent);
             }
         });

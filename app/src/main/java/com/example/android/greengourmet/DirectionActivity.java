@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 import static android.os.Build.VERSION_CODES.M;
 
 public class DirectionActivity extends AppCompatActivity {
@@ -17,13 +19,18 @@ public class DirectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_direction);
 
+//
+//        ArrayList<DirectionParameter> coordinate = new ArrayList<>();
+//        coordinate.add(new DirectionParameter("google.navigation:q=6.514590, 3.386431&mode=b","google.navigation:q=6.514590, 3.386431&mode=w","google.navigation:q=6.514590, 3.386431&mode=d"));
+//        DirectionParameter coord = coordinate.get()
+
         ImageView bIcon = (ImageView) findViewById(R.id.bike_icon);
         bIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                Uri gmmIntentUri = Uri.parse("google.navigation:q=Taronga+Zoo,+Sydney+Australia&mode=b");
+                Uri gmmIntentUri = Uri.parse("google.navigation:q=6.514590, 3.386431&mode=b");
                 Intent intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
                 startActivity(intent);
@@ -40,7 +47,7 @@ public class DirectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Uri gmmIntentUri = Uri.parse("google.navigation:q=Taronga+Zoo,+Sydney+Australia&mode=w");
+                Uri gmmIntentUri = Uri.parse("google.navigation:q=6.514590, 3.386431&mode=w");
                 Intent intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
                 startActivity(intent);
@@ -59,7 +66,7 @@ public class DirectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Uri gmmIntentUri = Uri.parse("google.navigation:q=Taronga+Zoo,+Sydney+Australia&mode=d");
+                Uri gmmIntentUri = Uri.parse("google.navigation:q=6.514590, 3.386431&mode=d");
                 Intent intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
                 startActivity(intent);
