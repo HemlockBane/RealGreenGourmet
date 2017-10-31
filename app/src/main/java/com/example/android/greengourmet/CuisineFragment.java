@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -35,10 +36,10 @@ public class CuisineFragment extends Fragment {
         ArrayList<ItemList> displayObject = new ArrayList<>();
 
 
-        displayObject.add(new ItemList("Eba", R.drawable.ic_face_teal_500_24dp));
-        displayObject.add(new ItemList("Curry", R.drawable.ic_face_teal_500_24dp));
-        displayObject.add(new ItemList("Cinnamon", R.drawable.ic_face_teal_500_24dp));
-        displayObject.add(new ItemList("Locust Beans", R.drawable.ic_face_teal_500_24dp));
+        displayObject.add(new ItemList("Egusi Soup", R.drawable.ic_face_teal_500_24dp));
+        displayObject.add(new ItemList("Ofada Stew", R.drawable.ic_face_teal_500_24dp));
+        displayObject.add(new ItemList("Gbegiri ", R.drawable.ic_face_teal_500_24dp));
+        displayObject.add(new ItemList("Isi-ewu & Nkwobi", R.drawable.ic_face_teal_500_24dp));
 
 
         Log.v("Ingredients", "Word at index 0:" + displayObject.get(0));
@@ -46,10 +47,8 @@ public class CuisineFragment extends Fragment {
         Log.v("Ingredients", "Word at index 2:" + displayObject.get(2));
 
 
-//        }
-        /**
-         * This creates a DisplayAdapter object instance and a ListView object
-         */
+//          This creates a DisplayAdapter object instance and a ListView object
+
 
 
         ItemListAdapter listAdapter = new ItemListAdapter(getActivity(), displayObject);
@@ -58,10 +57,17 @@ public class CuisineFragment extends Fragment {
 
         listView.setAdapter(listAdapter);
 
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
+
+
+
                 Intent intent = new Intent(getActivity(), MarketsActivity.class);
+
                 startActivity(intent);
             }
         });

@@ -20,10 +20,10 @@ public class MarketsActivity extends AppCompatActivity {
         ArrayList<ItemList> displayObject = new ArrayList<>();
 
 
-        displayObject.add(new ItemList("Yem Yem", "Yaba", R.drawable.ic_chevron_right_grey_600_24dp));
-        displayObject.add(new ItemList("Citydia", "Abule Oja", R.drawable.ic_chevron_right_grey_600_24dp));
-        displayObject.add(new ItemList("Justrite", "Bariga", R.drawable.ic_chevron_right_grey_600_24dp));
-        displayObject.add(new ItemList("Grocery Bazaar", "Ojuelegba", R.drawable.ic_chevron_right_grey_600_24dp));
+        displayObject.add(new ItemList("Yem Yem", "Yaba", R.drawable.ic_shopping_basket_grey_600_24dp));
+        displayObject.add(new ItemList("Citydia", "Abule Oja", R.drawable.ic_shopping_basket_grey_600_24dp));
+        displayObject.add(new ItemList("Justrite", "Bariga", R.drawable.ic_shopping_basket_grey_600_24dp));
+        displayObject.add(new ItemList("Grocery Bazaar", "Ojuelegba", R.drawable.ic_shopping_basket_grey_600_24dp));
 
 
         Log.v("Ingredients", "Word at index 0:" + displayObject.get(0));
@@ -49,8 +49,12 @@ public class MarketsActivity extends AppCompatActivity {
 
                 Toast.makeText(MarketsActivity.this, "Test", Toast.LENGTH_SHORT).show();
 
-                Intent bikeIntent = new Intent(MarketsActivity.this, DirectionActivity.class);
-                startActivity(bikeIntent);
+                String[] itemName = getResources().getStringArray(R.array.Place);
+                final String activity = itemName[position];
+
+                Intent intent = new Intent(MarketsActivity.this, DirectionActivity.class);
+                intent.putExtra("itemName", activity);
+                startActivity(intent);
 //
 
 

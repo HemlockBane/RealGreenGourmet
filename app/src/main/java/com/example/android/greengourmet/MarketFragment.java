@@ -34,7 +34,7 @@ public class MarketFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View rootView = inflater.inflate(R.layout.activity_item_list, container, false);
-        ArrayList<ItemList> displayObject = new ArrayList<>();
+        final ArrayList<ItemList> displayObject = new ArrayList<>();
 
 
         displayObject.add(new ItemList("Yem Yem", "Yaba", R.drawable.ic_chevron_right_grey_600_24dp));
@@ -63,11 +63,16 @@ public class MarketFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                //ItemList itemLists = displayObject.get(position);
 
                 Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
 
-                Intent bikeIntent = new Intent(getActivity(), DirectionActivity.class);
-                startActivity(bikeIntent);
+                String[] itemName = getResources().getStringArray(R.array.Place);
+                final String activity = itemName[position];
+
+                Intent intent = new Intent(getActivity(), DirectionActivity.class);
+                intent.putExtra("itemName", activity);
+                startActivity(intent);
 //
 
 

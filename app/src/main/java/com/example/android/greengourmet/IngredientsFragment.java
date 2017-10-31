@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -35,10 +36,10 @@ public class IngredientsFragment extends Fragment {
         ArrayList<ItemList> displayObject = new ArrayList<>();
 
 
-        displayObject.add(new ItemList("Eba", R.drawable.ic_face_teal_500_24dp));
+        displayObject.add(new ItemList("Rosemary", R.drawable.ic_face_teal_500_24dp));
         displayObject.add(new ItemList("Curry", R.drawable.ic_face_teal_500_24dp));
         displayObject.add(new ItemList("Cinnamon", R.drawable.ic_face_teal_500_24dp));
-        displayObject.add(new ItemList("Locust Beans", R.drawable.ic_face_teal_500_24dp));
+        displayObject.add(new ItemList("Allspice", R.drawable.ic_face_teal_500_24dp));
 
 
         Log.v("Ingredients", "Word at index 0:" + displayObject.get(0));
@@ -61,7 +62,12 @@ public class IngredientsFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
+
+
+
                 Intent intent = new Intent(getActivity(), MarketsActivity.class);
+
                 startActivity(intent);
             }
         });

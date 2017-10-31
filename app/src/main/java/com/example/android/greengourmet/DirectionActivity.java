@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -14,17 +15,38 @@ import static android.os.Build.VERSION_CODES.M;
 
 public class DirectionActivity extends AppCompatActivity {
 
+    String work;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_direction);
+
+        ImageView bIcon = (ImageView) findViewById(R.id.bike_icon);
+
+        ImageView wIcon = (ImageView) findViewById(R.id.walk_icon);
+
+        ImageView dIcon = (ImageView) findViewById(R.id.drive_icon);
+
+        TextView text = (TextView) findViewById(R.id.place);
 
 //
 //        ArrayList<DirectionParameter> coordinate = new ArrayList<>();
 //        coordinate.add(new DirectionParameter("google.navigation:q=6.514590, 3.386431&mode=b","google.navigation:q=6.514590, 3.386431&mode=w","google.navigation:q=6.514590, 3.386431&mode=d"));
 //        DirectionParameter coord = coordinate.get()
 
-        ImageView bIcon = (ImageView) findViewById(R.id.bike_icon);
+
+        Bundle extra = getIntent().getExtras();
+
+        if (extra != null) {
+
+            work = extra.getString("itemName");
+
+            text.setText(work);
+        }
+
+
+
         bIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +64,7 @@ public class DirectionActivity extends AppCompatActivity {
             }
         });
 
-        ImageView wIcon = (ImageView) findViewById(R.id.walk_icon);
+
         wIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +83,6 @@ public class DirectionActivity extends AppCompatActivity {
         });
 
 
-        ImageView dIcon = (ImageView) findViewById(R.id.drive_icon);
         dIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

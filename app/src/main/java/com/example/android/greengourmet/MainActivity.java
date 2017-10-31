@@ -1,18 +1,70 @@
 package com.example.android.greengourmet;
 
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    //Step 1 (Declare variable RC_SIGN_IN)
+    private static final int RC_SIGN_IN = 123;
+
+    //Step 2 (Declare Firebase variables)
+    private FirebaseDatabase mFirebase;
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //Step 3 (Initialise Firebase variables)
+        mFirebase = FirebaseDatabase.getInstance();
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
+
+        //Step 4 (Instantiate AuthStateListener )
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                if (user != null) {
+                    Toast.makeText(MainActivity.this, "Welcome! You're now signed in", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Here the user is signed out. AuthUI acts now.
+
+                    startActivityForResult(
+                            AuthUI.getInstance()
+                                    .createSignInIntentBuilder()
+                                    .setIsSmartLockEnabled(false)
+                                    .setAvailableProviders(
+                                            Arrays.asList(
+                                                    new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
+                                                    new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build()
+                                            ))
+                                    .build(),
+                            RC_SIGN_IN);
+                }
+
+
+            }
+        };
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
@@ -36,5 +88,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    //Step 4 (Override onPause)
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        //This comes seventh
+        mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
+    }
+
+    //Step 5 (Override onResume)
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //This comes sixth
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 }
