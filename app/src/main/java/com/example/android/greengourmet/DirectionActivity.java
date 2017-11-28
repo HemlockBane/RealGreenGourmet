@@ -30,10 +30,6 @@ public class DirectionActivity extends AppCompatActivity {
 
         TextView text = (TextView) findViewById(R.id.place);
 
-//
-//        ArrayList<DirectionParameter> coordinate = new ArrayList<>();
-//        coordinate.add(new DirectionParameter("google.navigation:q=6.514590, 3.386431&mode=b","google.navigation:q=6.514590, 3.386431&mode=w","google.navigation:q=6.514590, 3.386431&mode=d"));
-//        DirectionParameter coord = coordinate.get()
 
 
         Bundle extra = getIntent().getExtras();
@@ -41,10 +37,8 @@ public class DirectionActivity extends AppCompatActivity {
         if (extra != null) {
 
             work = extra.getString("itemName");
-
             text.setText(work);
         }
-
 
 
         bIcon.setOnClickListener(new View.OnClickListener() {
@@ -53,10 +47,9 @@ public class DirectionActivity extends AppCompatActivity {
 
 
                 Uri gmmIntentUri = Uri.parse("google.navigation:q=6.514590, 3.386431&mode=b");
+
                 Intent intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
-                startActivity(intent);
-
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
@@ -70,10 +63,9 @@ public class DirectionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Uri gmmIntentUri = Uri.parse("google.navigation:q=6.514590, 3.386431&mode=w");
+
                 Intent intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
-                startActivity(intent);
-
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
@@ -90,8 +82,6 @@ public class DirectionActivity extends AppCompatActivity {
                 Uri gmmIntentUri = Uri.parse("google.navigation:q=6.514590, 3.386431&mode=d");
                 Intent intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
-                startActivity(intent);
-
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
@@ -100,8 +90,6 @@ public class DirectionActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
 
 }
