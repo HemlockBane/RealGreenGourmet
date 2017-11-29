@@ -17,13 +17,13 @@ import java.util.ArrayList;
  * Created by Polymath on 01/07/2017.
  */
 
-public class ItemListAdapter extends ArrayAdapter <ItemList> {
-    private static  final  String LOG_TAG = ItemListAdapter.class.getSimpleName();
+public class ItemListAdapter extends ArrayAdapter<ItemList> {
+    private static final String LOG_TAG = ItemListAdapter.class.getSimpleName();
 
 
-    public ItemListAdapter (Activity context, ArrayList <ItemList> mItemList){
+    public ItemListAdapter(Activity context, ArrayList<ItemList> mItemList) {
 
-        super (context, 0, mItemList);
+        super(context, 0, mItemList);
 
     }
 
@@ -32,8 +32,8 @@ public class ItemListAdapter extends ArrayAdapter <ItemList> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         View listItemView = convertView;
-        if(listItemView == null){
-            listItemView = LayoutInflater.from(getContext()).inflate (R.layout.custom_view, parent,false);
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.custom_view, parent, false);
         }
 
         ItemList currentItemList = getItem(position);
@@ -44,9 +44,6 @@ public class ItemListAdapter extends ArrayAdapter <ItemList> {
 
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.icon_view);
         iconView.setImageResource(currentItemList.getImageResourceId());
-
-
-
 
 
         return listItemView;

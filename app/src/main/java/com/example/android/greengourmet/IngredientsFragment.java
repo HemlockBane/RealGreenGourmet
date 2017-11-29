@@ -53,7 +53,7 @@ public class IngredientsFragment extends Fragment {
          */
 
 
-        ItemListAdapter listAdapter = new ItemListAdapter(getActivity(),displayObject);
+        ItemListAdapter listAdapter = new ItemListAdapter(getActivity(), displayObject);
 
         ListView listView = (ListView) rootView.findViewById(R.id.item_list);
 
@@ -63,7 +63,6 @@ public class IngredientsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
-
 
 
                 Intent intent = new Intent(getActivity(), MarketsActivity.class);

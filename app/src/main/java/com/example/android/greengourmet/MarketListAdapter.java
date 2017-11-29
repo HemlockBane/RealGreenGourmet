@@ -16,11 +16,11 @@ import java.util.ArrayList;
  * Created by Polymath on 15/08/2017.
  */
 
-public class MarketListAdapter extends ArrayAdapter <ItemList> {
+public class MarketListAdapter extends ArrayAdapter<ItemList> {
 
-    public MarketListAdapter (Activity context, ArrayList<ItemList> mItemList){
+    public MarketListAdapter(Activity context, ArrayList<ItemList> mItemList) {
 
-        super (context, 0, mItemList);
+        super(context, 0, mItemList);
 
     }
 
@@ -29,8 +29,8 @@ public class MarketListAdapter extends ArrayAdapter <ItemList> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         View listItemView = convertView;
-        if(listItemView == null){
-            listItemView = LayoutInflater.from(getContext()).inflate (R.layout.market_view, parent,false);
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.market_view, parent, false);
         }
 
         ItemList currentItemList = getItem(position);
@@ -42,12 +42,8 @@ public class MarketListAdapter extends ArrayAdapter <ItemList> {
         sTextView.setText(currentItemList.getSecondItemName());
 
 
-
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.icon_place_right);
         iconView.setImageResource(currentItemList.getImageResourceId());
-
-
-
 
 
         return listItemView;

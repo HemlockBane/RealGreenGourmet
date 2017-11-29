@@ -50,7 +50,6 @@ public class CuisineFragment extends Fragment {
 //          This creates a DisplayAdapter object instance and a ListView object
 
 
-
         ItemListAdapter listAdapter = new ItemListAdapter(getActivity(), displayObject);
 
         ListView listView = (ListView) rootView.findViewById(R.id.item_list);
@@ -63,7 +62,6 @@ public class CuisineFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
-
 
 
                 Intent intent = new Intent(getActivity(), MarketsActivity.class);

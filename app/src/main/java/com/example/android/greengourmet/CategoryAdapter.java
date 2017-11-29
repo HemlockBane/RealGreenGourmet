@@ -13,9 +13,6 @@ public class CategoryAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 3;
     private Context mContext;
-//    private String tabTitles[] = new String[] {mContext.getString(R.string.cuisine_name)
-// ,mContext.getString(R.string.ingredient_name)
-// , mContext.getString(R.string.market_name) };
 
 
     public CategoryAdapter(FragmentManager fm, Context context) {
@@ -41,6 +38,10 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     }
 
 
+//    private String tabTitles[] = new String[] {mContext.getString(R.string.cuisine_name)
+// ,mContext.getString(R.string.ingredient_name)
+// , mContext.getString(R.string.market_name) };
+
 //        @Override
 //    public CharSequence getPageTitle(int position) {
 //        return null;
@@ -58,7 +59,6 @@ public class CategoryAdapter extends FragmentPagerAdapter {
 //    public CharSequence getPageTitle(int position) {
 //        return tabTitles[position];
 //    }
-
 
 
 }

@@ -1,11 +1,14 @@
 package com.example.android.greengourmet;
 
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -52,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
                     startActivityForResult(
                             AuthUI.getInstance()
                                     .createSignInIntentBuilder()
+                                    .setLogo(R.drawable.ic_product_icon)
                                     .setIsSmartLockEnabled(false)
                                     .setAvailableProviders(
                                             Arrays.asList(
+                                                    new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build(),
                                                     new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
                                                     new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build()
                                             ))
@@ -87,7 +92,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN)
+        {
+            if (resultCode == RESULT_OK)
+            {
+                Toast.makeText(MainActivity.this, "Signed in", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(resultCode == RESULT_CANCELED)
+            {
+                Toast.makeText(MainActivity.this, "Sign in cancelled", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
     }
 
     //Step 4 (Override onPause)
@@ -106,5 +128,26 @@ public class MainActivity extends AppCompatActivity {
 
         //This comes sixth
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_signout:
+
+                AuthUI.getInstance().signOut(this);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+
+        }
+
     }
 }
